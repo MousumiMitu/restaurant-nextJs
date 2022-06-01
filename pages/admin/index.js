@@ -27,7 +27,7 @@ const Index = ({ orders, products }) => {
       });
       setOrderList([
         res.data,
-        ...orderList.filter((order) => order._id === id),
+        ...orderList.filter((order) => order._id !== id),
       ]);
     } catch (err) {
       console.log(err);
@@ -48,7 +48,6 @@ const Index = ({ orders, products }) => {
               <th>Action</th>
             </tr>
           </tbody>
-
           {pizzaList.map((product) => (
             <tbody key={product._id}>
               <tr className={styles.trTitle}>
@@ -57,8 +56,8 @@ const Index = ({ orders, products }) => {
                     src={product.img}
                     width={50}
                     height={50}
-                    alt=""
                     objectFit="cover"
+                    alt=""
                   />
                 </td>
                 <td>{product._id.slice(0, 5)}...</td>
@@ -102,11 +101,8 @@ const Index = ({ orders, products }) => {
                 </td>
                 <td>{status[order.status]}</td>
                 <td>
-                  <button
-                    onClick={() => handleStatus(order._id)}
-                    className={styles.button}
-                  >
-                    Next stage
+                  <button onClick={() => handleStatus(order._id)}>
+                    Next Stage
                   </button>
                 </td>
               </tr>
@@ -118,7 +114,18 @@ const Index = ({ orders, products }) => {
   );
 };
 
-export const getServerSideProps = async () => {
+export const getServerSideProps = async (ctx) => {
+  const myCookie = ctx.req?.cookies || "";
+
+  if (myCookie.token !== process.env.TOKEN) {
+    return {
+      redirect: {
+        destination: "/admin/login",
+        permanent: false,
+      },
+    };
+  }
+
   const productRes = await axios.get("http://localhost:3000/api/products");
   const orderRes = await axios.get("http://localhost:3000/api/orders");
 
