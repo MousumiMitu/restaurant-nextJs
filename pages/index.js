@@ -3,7 +3,7 @@ import Head from "next/head";
 import Image from "next/image";
 import { useState } from "react";
 import Add from "../components/Add";
-import AddButton from "../components/addButton";
+import AddButton from "../components/AddButton";
 import Featured from "../components/featured";
 import PizzaList from "../components/PizzaList";
 import styles from "../styles/Home.module.css";
