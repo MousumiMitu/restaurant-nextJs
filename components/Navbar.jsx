@@ -25,21 +25,24 @@ const Navbar = () => {
           </li>
           <li className={styles.listItem}>Products</li>
           <li className={styles.listItem}>Menu</li>
-          <Image src="/images/logo.png" alt="" width="160px" height="69px" />
-          <li className={styles.listItem}>Events</li>
-          <li className={styles.listItem}>Blog</li>
-          <li className={styles.listItem}>Contact</li>
+          <li className={styles.listItem}>
+            <Link href="/admin">Admin</Link>
+          </li>
+          <Link href="/cart" passHref>
+            <div className={styles.item}>
+              <div className={styles.cart}>
+                <Image
+                  src="/images/cart.png"
+                  alt=""
+                  width="30px"
+                  height="30px"
+                />
+                <div className={styles.counter}>{quantity}</div>
+              </div>
+            </div>
+          </Link>
         </ul>
       </div>
-
-      <Link href="/cart" passHref>
-        <div className={styles.item}>
-          <div className={styles.cart}>
-            <Image src="/images/cart.png" alt="" width="30px" height="30px" />
-            <div className={styles.counter}>{quantity}</div>
-          </div>
-        </div>
-      </Link>
     </div>
   );
 };

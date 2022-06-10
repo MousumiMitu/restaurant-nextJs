@@ -1,7 +1,7 @@
 .container {
-  height: 100px;
+  height: 90px;
   padding: 0px 50px;
-  background-color: #d1411e;
+  background-color: #110300;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -12,9 +12,7 @@
   display: flex;
   align-items: center;
 }
-.item:nth-child(2) {
-  flex: 3;
-}
+
 .item:last-child {
   justify-content: flex-end;
 }
@@ -33,6 +31,7 @@
 .text:first-child {
   font-size: 12px;
   font-weight: 500;
+  color: #d1411e;
 }
 
 .text:last-child {
@@ -50,10 +49,15 @@
 .listItem {
   margin: 20px;
   font-weight: 500;
+  cursor: pointer;
+}
+.listItem:hover {
+  color: #d1411e;
 }
 
 .cart {
   position: relative;
+  cursor: pointer;
 }
 .counter {
   position: absolute;

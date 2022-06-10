@@ -1,6 +1,5 @@
 .container {
-  height: calc(100vh - 100px);
-  background-color: #222;
+  background-color: #110300;
   display: flex;
 }
 
@@ -20,10 +19,12 @@
   flex: 1;
   padding: 0 20px;
 }
-
+.card:first-child {
+  flex: 2;
+}
 .title {
   font-size: 18px;
-  color: #b7903c;
+  color: #d1411e;
 }
 
 .text {
@@ -32,6 +33,9 @@
 
 .motto {
   color: rgb(211, 211, 211);
+}
+.footerImage {
+  width: 100px;
 }
 
 @media screen and (max-width: 480px) {

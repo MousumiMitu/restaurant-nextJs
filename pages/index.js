@@ -7,6 +7,9 @@ import AddButton from "../components/addButton";
 import Featured from "../components/featured";
 import PizzaList from "../components/PizzaList";
 import styles from "../styles/Home.module.css";
+import "slick-carousel/slick/slick.css";
+
+import "slick-carousel/slick/slick-theme.css";
 
 export default function Home({ pizzaList, admin }) {
   const [close, setClose] = useState(true);

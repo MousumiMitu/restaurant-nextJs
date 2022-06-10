@@ -4,13 +4,23 @@ const Footer = () => {
   return (
     <div className={styles.container}>
       <div className={styles.item}>
-        <Image src="/images/bg.png" objectFit="cover" layout="fill" alt="" />
-      </div>
-      <div className={styles.item}>
         <div className={styles.card}>
-          <h2 className={styles.motto}>
-            OH YES, WE DID.THE LAMA PIZZA, WELL BAKED SLICE OF PIZZA.
-          </h2>
+          <h2 className={styles.motto}>WELL BAKED FRESHED PIZZA EVERY TIME.</h2>
+          <Image
+            src="/images/footer.jpg"
+            alt=""
+            className={styles.footerImage}
+            width="450px"
+            height="300px"
+          />
+        </div>
+        <div className={styles.card}>
+          <h1 className={styles.title}>Categories</h1>
+          <p className={styles.text}>About Us</p>
+          <p className={styles.text}>Contact Us</p>
+          <p className={styles.text}>New Pizza</p>
+          <p className={styles.text}>Menu</p>
+          <p className={styles.text}>Chefs</p>
         </div>
         <div className={styles.card}>
           <h1 className={styles.title}>FIND OUR RESTAURANTS</h1>
@@ -23,16 +33,6 @@ const Footer = () => {
             2356 K. Laquie Rd #235.
             <br /> NewYork, 85022
             <br /> (602) 867-1011
-          </p>
-          <p className={styles.text}>
-            1614 E. Erwin St #104.
-            <br /> NewYork, 85022
-            <br /> (602) 867-1012
-          </p>
-          <p className={styles.text}>
-            1614 W. Caroll St #125.
-            <br /> NewYork, 85022
-            <br /> (602) 867-1013
           </p>
         </div>
         <div className={styles.card}>
