@@ -19,13 +19,16 @@ export default async function handler(req, res) {
       res.status(500).json(err);
     }
   }
+
   if (method === "PUT") {
     if (!token || token !== process.env.token) {
       return res.status(401).json("Not authenticated!");
     }
     try {
-      const product = await Product.findByIdAndUpdate(id);
-      res.status(201).json(product);
+      const product = await Product.findByIdAndUpdate(id, req.body, {
+        new: true,
+      });
+      res.status(200).json(product);
     } catch (err) {
       res.status(500).json(err);
     }
@@ -37,7 +40,7 @@ export default async function handler(req, res) {
     }
     try {
       await Product.findByIdAndDelete(id);
-      res.status(200).json("The product has been deleted");
+      res.status(200).json("The product has been deleted!");
     } catch (err) {
       res.status(500).json(err);
     }
